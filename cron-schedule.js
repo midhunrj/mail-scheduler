@@ -3,17 +3,17 @@ const { sendEmails } = require("./mailer");
 
 const startEmailScheduler=(emailList)=>{
   console.log("hello i am sending");
-  
-    cron.schedule(
- "0 12 * * *",
+  const EmailList=[...new Set(emailList)]
+   cron.schedule(
+  "45 12 * * *",
   async () => {
-    console.log("Running at 11:45 IST");
+    console.log("Running at 12:45 PM IST");
     await sendEmails(emailList);
   },
   {
     timezone: "Asia/Kolkata",
   }
-)
+);
 }
 
 module.exports={

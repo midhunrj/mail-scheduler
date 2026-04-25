@@ -44,9 +44,10 @@ midhunrj18852@gmail.com`,
     ],
   };
 }
+let currentIndex = 0;
 
 async function sendEmails(emailList) {
-  const todayBatch = emailList.slice(0, DAILY_LIMIT);
+  const todayBatch = emailList.slice(currentIndex, currentIndex + DAILY_LIMIT);
 
   for (let i = 0; i < todayBatch.length; i++) {
     const email = todayBatch[i];
@@ -63,7 +64,8 @@ async function sendEmails(emailList) {
     await new Promise((res) => setTimeout(res, delay));
   }
 
+  currentIndex += DAILY_LIMIT;
+
   console.log("🎯 Today's batch completed!");
 }
-
 module.exports = { sendEmails };
