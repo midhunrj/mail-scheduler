@@ -45,8 +45,8 @@ midhunrj18852@gmail.com`,
   };
 }
 
-async function sendEmails() {
-  const todayBatch = EMAIL_LIST.slice(0, DAILY_LIMIT);
+async function sendEmails(emailList) {
+  const todayBatch = emailList.slice(0, DAILY_LIMIT);
 
   for (let i = 0; i < todayBatch.length; i++) {
     const email = todayBatch[i];

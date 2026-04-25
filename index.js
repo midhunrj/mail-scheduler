@@ -87,10 +87,10 @@
 // module.exports={sendEmails}
 
 const dotenv = require("dotenv");
-const nodemailer = require("nodemailer");
 const { startEmailScheduler } = require("./cron-schedule");
-
+const express=require('express')
 dotenv.config();
+const app=express()
 
 const EMAIL_LIST = [
   // Tier 1 — Highest callback probability (direct careers / hiring / jobs)
@@ -381,6 +381,13 @@ const EMAIL_LIST = [
   "sshrsolutions2020@gmail.com",
   "vakratundsolutions1@gmail.com"
 ];
+app.get("/", (req, res) => {
+  res.send("Email sender running...");
+});
 
+startEmailScheduler(EMAIL_LIST);
 
-startEmailScheduler();
+const PORT = 3918;
+app.listen(PORT, () => {
+  console.log("Server running on port", PORT);
+});
