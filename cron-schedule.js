@@ -1,5 +1,5 @@
 const cron = require("node-cron");
-const { sendEmails } = require("./index");
+const { sendEmails } = require("./mailer");
 
 const startEmailScheduler=()=>{
     cron.schedule(
