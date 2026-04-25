@@ -3,7 +3,7 @@ const { sendEmails } = require("./mailer");
 
 const startEmailScheduler=(emailList)=>{
     cron.schedule(
-  "0 9 * * *",
+ "45 11 * * *",
   async () => {
     console.log("Running at 9 AM IST");
     await sendEmails(emailList);
