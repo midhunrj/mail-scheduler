@@ -58,7 +58,7 @@ async function sendEmails(emailList) {
       console.log(`❌ Failed: ${email}`, err.message);
     }
 
-    const delay = Math.floor(Math.random() * (120 - 65) + 45) * 1000;
+    const delay = Math.floor(Math.random() * (120 - 45) + 45) * 1000;
     console.log(`⏳ Waiting ${delay / 1000} sec...\n`);
     await new Promise((res) => setTimeout(res, delay));
   }
