@@ -7,8 +7,8 @@ const startEmailScheduler=(emailList)=>{
    cron.schedule(
   "05 9 * * 1-6",
   async () => {
-    console.log("Running at 12:45 PM IST");
-    await sendEmails(emailList);
+    console.log("Running at 09:05 AM IST");
+    await sendEmails(EmailList);
   },
   {
     timezone: "Asia/Kolkata",
