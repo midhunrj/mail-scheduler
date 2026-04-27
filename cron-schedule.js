@@ -5,9 +5,9 @@ const startEmailScheduler=(emailList)=>{
   console.log("hello i am sending");
   const EmailList=[...new Set(emailList)]
    cron.schedule(
-  "05 9 * * 1-6",
+  "25 9 * * *",
   async () => {
-    console.log("Running at 09:05 AM IST");
+    console.log("Running at 09:25 AM IST");
     await sendEmails(EmailList);
   },
   {
